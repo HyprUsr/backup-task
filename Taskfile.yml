@@ -51,7 +51,7 @@ tasks:
   mongodb-dump-db:
     internal: true
     cmds:
-      - cmd: mongodump --username={{ .MONGODB_USERNAME }} --password={{ .MONGODB_PASSWORD }} --authenticationDatabase={{ .MONGODB_AUTH_DB }} --db={{ .MONGODB_DATABASE }} --out {{ .BACKUP_WORK_DIRECTORY }}/mongodb-dump
+      - cmd: mongodump --username={{ .MONGODB_USERNAME }} --password={{ .MONGODB_PASSWORD }} --authenticationDatabase={{ .MONGODB_AUTH_DB }} --host={{ .MONGODB_HOST }} --db={{ .MONGODB_DATABASE }} --out {{ .BACKUP_WORK_DIRECTORY }}/mongodb-dump
       - task: compress
         vars:
           INCLUDE_DIRS: "{{ .BACKUP_WORK_DIRECTORY }}/mongodb-dump"
