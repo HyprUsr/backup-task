@@ -69,7 +69,7 @@ tasks:
     internal: true
     cmds:
       - cmd: |
-          {{ .RCLONE_PATH }} --config {{ .RCLONE_CONFIG_PATH }} copy {{ .BACKUP_WORK_DIRECTORY }}/{{ .BACKUP_NAME }} {{ .RCLONE_REMOTE }}:{{ .RCLONE_DESTINATION }}
+          {{ .RCLONE_PATH }} --config {{ .RCLONE_CONFIG_PATH }} copy {{ .BACKUP_WORK_DIRECTORY }}/{{ .BACKUP_NAME }} {{ .RCLONE_REMOTE }}:{{ .RCLONE_DESTINATION }}/{{ .BACKUP_NAME }}
 
   delete-old-backups:
     cmds:
